@@ -7,42 +7,41 @@ class ClockFace extends StatelessWidget{
 
   final DateTime dateTime;
   final ClockText clockText;
-  final bool showHourHandleHeartShape;
 
-  ClockFace({this.clockText = ClockText.arabic, this.showHourHandleHeartShape = false, this.dateTime});
+  ClockFace({this.clockText = ClockText.arabic, this.dateTime});
 
   @override
   Widget build(BuildContext context) {
-    return new Padding(
+    return Padding(
       padding: const EdgeInsets.all(10.0),
-      child: new AspectRatio(
+      child: AspectRatio(
         aspectRatio: 1.0,
-        child: new Container(
+        child: Container(
           width: double.infinity,
-          decoration: new BoxDecoration(
+          decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: Colors.white,
           ),
 
-          child: new Stack(
+          child: Stack(
             children: <Widget>[
               //dial and numbers
-              new Container(
+              Container(
                 width: double.infinity,
                 height: double.infinity,
                 padding: const EdgeInsets.all(10.0),
-                child:new CustomPaint(
-                  painter: new ClockDialPainter(clockText: clockText),
+                child:CustomPaint(
+                  painter: ClockDialPainter(clockText: clockText),
                 ),
               ),
 
 
               //centerpoint
-              new Center(
-                child: new Container(
+              Center(
+                child: Container(
                   width: 15.0,
                   height: 15.0,
-                  decoration: new BoxDecoration(
+                  decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.black,
                   ),
@@ -50,7 +49,7 @@ class ClockFace extends StatelessWidget{
               ),
 
 
-              new ClockHands(dateTime:dateTime, showHourHandleHeartShape: showHourHandleHeartShape),
+              ClockHands(dateTime:dateTime),
 
             ],
           ),

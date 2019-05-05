@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class AppClock extends StatelessWidget{
 
   @override
@@ -34,10 +33,8 @@ class AppClock extends StatelessWidget{
 
             new Clock(
                 circleColor: Colors.black,
-                showBellsAndLegs: true,
                 bellColor: Colors.green,
                 clockText: ClockText.arabic,
-                showHourHandleHeartShape: false,
             ),
           ],
         ),
