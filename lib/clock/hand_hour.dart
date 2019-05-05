@@ -8,8 +8,10 @@ class HourHandPainter extends CustomPainter {
   int minutes;
 
   HourHandPainter({this.hours, this.minutes}) : hourHandPaint = new Paint() {
-    hourHandPaint.color = Colors.black87;
-    hourHandPaint.style = PaintingStyle.fill;
+    hourHandPaint.color = Color(0xff222d62);
+    hourHandPaint.style = PaintingStyle.stroke;
+    hourHandPaint.strokeWidth = 6.0;
+    hourHandPaint.strokeCap = StrokeCap.round;
   }
 
   @override
@@ -27,14 +29,8 @@ class HourHandPainter extends CustomPainter {
 
     Path path = new Path();
 
-    //hour hand stem
-    path.moveTo(-1.0, -radius + radius / 4);
-    path.lineTo(-5.0, -radius + radius / 2);
-    path.lineTo(-2.0, 0.0);
-    path.lineTo(2.0, 0.0);
-    path.lineTo(5.0, -radius + radius / 2);
-    path.lineTo(1.0, -radius + radius / 4);
-    path.close();
+    path.moveTo(0, -radius * 0.5);
+    path.lineTo(0, radius * 0.1);
 
     canvas.drawPath(path, hourHandPaint);
     canvas.drawShadow(path, Colors.black, 2.0, false);

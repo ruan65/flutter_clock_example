@@ -11,8 +11,10 @@ class MinuteHandPainter extends CustomPainter{
   int seconds;
 
   MinuteHandPainter({this.minutes, this.seconds}):minuteHandPaint= new Paint(){
-    minuteHandPaint.color= const Color(0xFF333333);
-    minuteHandPaint.style= PaintingStyle.fill;
+    minuteHandPaint.color = Color(0xffc5cbdd);
+    minuteHandPaint.style = PaintingStyle.stroke;
+    minuteHandPaint.strokeWidth = 5.0;
+    minuteHandPaint.strokeCap = StrokeCap.round;
 
   }
 
@@ -26,13 +28,9 @@ class MinuteHandPainter extends CustomPainter{
     canvas.rotate(2*pi*((this.minutes+(this.seconds/60))/60));
 
     Path path= new Path();
-    path.moveTo(-1.5, -radius-10.0);
-    path.lineTo(-5.0, -radius/1.8);
-    path.lineTo(-2.0, 10.0);
-    path.lineTo(2.0, 10.0);
-    path.lineTo(5.0, -radius/1.8);
-    path.lineTo(1.5, -radius-10.0);
-    path.close();
+    path.moveTo(-1.5, -radius * 0.6);
+    path.lineTo(0, radius * 0.1);
+    
 
     canvas.drawPath(path, minuteHandPaint);
     canvas.drawShadow(path, Colors.black, 4.0, false);
