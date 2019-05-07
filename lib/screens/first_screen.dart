@@ -31,9 +31,44 @@ class FirstScreen extends StatelessWidget {
                     letterSpacing: 1.3,
                   ),
                 ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  '6:12PM',
+                  style: TextStyle(
+                    color: Color(0xff2d386b),
+                    fontSize: 25,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
               ],
             ),
-            Column(),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  'WAKE UP IN',
+                  style: TextStyle(
+                    color: Color(0xffff0863),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 1.3,
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  '8:00AM',
+                  style: TextStyle(
+                    color: Color(0xff2d386b),
+                    fontSize: 25,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ],
+            ),
           ],
         )
       ],

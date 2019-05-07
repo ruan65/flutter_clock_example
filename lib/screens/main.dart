@@ -27,6 +27,7 @@ class AppClock extends StatelessWidget {
       child: DefaultTabController(
         length: 3,
         child: Scaffold(
+          bottomNavigationBar: BottomBar(),
           appBar: AppBar(
             elevation: 0,
             backgroundColor: Colors.transparent,
@@ -39,12 +40,11 @@ class AppClock extends StatelessWidget {
                     children: <Widget>[
                       TabBar(
                         indicator: UnderlineTabIndicator(
-                          // insets: EdgeInsets.fromLTRB(40, 20, 40, 0),
-                          borderSide: BorderSide(
-                            color: Color(0xffff0863),
-                            width: 4.0,
-                          )
-                        ),
+                            // insets: EdgeInsets.fromLTRB(40, 20, 40, 0),
+                            borderSide: BorderSide(
+                          color: Color(0xffff0863),
+                          width: 4.0,
+                        )),
                         indicatorWeight: 15,
                         indicatorSize: TabBarIndicatorSize.label,
                         labelColor: Color(0xff2d386b),
@@ -86,12 +86,50 @@ class AppClock extends StatelessWidget {
           ),
           body: TabBarView(
             children: <Widget>[
-              Center(child: FirstScreen(),),
+              Center(
+                child: FirstScreen(),
+              ),
               Text('Second screen'),
               Text('Third screen'),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class BottomBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(20, 0, 50, 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          FlatButton(
+            child: Text('EDIT ALARMS', style: TextStyle(letterSpacing: 1.5)),
+            color: Color(0xffff5e92),
+            textColor: Colors.white,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            onPressed: () {},
+          ),
+          FloatingActionButton(
+            onPressed: () {},
+            backgroundColor: Colors.white,
+            foregroundColor: Colors.black,
+            elevation: 5,
+            highlightElevation: 3,
+            child: Text(
+              '+',
+              style: TextStyle(
+                  color: Color(0xff253165),
+                  fontWeight: FontWeight.w700,
+                  fontSize: 25),
+            ),
+          )
+        ],
       ),
     );
   }
