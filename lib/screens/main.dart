@@ -1,3 +1,4 @@
+import 'package:clock_ui_app/screens/first_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:clock_ui_app/clock/clock.dart';
 import 'package:clock_ui_app/clock/clock_text.dart';
@@ -37,6 +38,13 @@ class AppClock extends StatelessWidget {
                   child: Column(
                     children: <Widget>[
                       TabBar(
+                        indicator: UnderlineTabIndicator(
+                          // insets: EdgeInsets.fromLTRB(40, 20, 40, 0),
+                          borderSide: BorderSide(
+                            color: Color(0xffff0863),
+                            width: 4.0,
+                          )
+                        ),
                         indicatorWeight: 15,
                         indicatorSize: TabBarIndicatorSize.label,
                         labelColor: Color(0xff2d386b),
@@ -75,6 +83,13 @@ class AppClock extends StatelessWidget {
                 ),
               ),
             ),
+          ),
+          body: TabBarView(
+            children: <Widget>[
+              Center(child: FirstScreen(),),
+              Text('Second screen'),
+              Text('Third screen'),
+            ],
           ),
         ),
       ),
