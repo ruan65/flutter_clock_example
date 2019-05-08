@@ -2,6 +2,7 @@ import 'package:clock_ui_app/screens/first_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:clock_ui_app/clock/clock.dart';
 import 'package:clock_ui_app/clock/clock_text.dart';
+import 'package:clock_ui_app/screens/second_screen.dart';
 
 void main() => runApp(new MyApp());
 
@@ -89,7 +90,9 @@ class AppClock extends StatelessWidget {
               Center(
                 child: FirstScreen(),
               ),
-              Text('Second screen'),
+              Center(
+                child: SecondSreen(),
+              ),
               Text('Third screen'),
             ],
           ),
