@@ -78,7 +78,7 @@ class SecondSreen extends StatelessWidget {
                       height: 15,
                     ),
                     Container(
-                      height: 150,
+                      height: 120,
                       width: double.infinity,
                       padding: EdgeInsets.symmetric(horizontal: 10),
                       child: CustomPaint(
